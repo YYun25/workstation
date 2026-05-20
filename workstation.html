@@ -95,7 +95,7 @@
             color: var(--primary);
         }
 
-        /* 💡 點亮 (Active) 狀態 - 所有項目完全統一 */
+        /* 點亮 (Active) 狀態 - 所有項目完全統一 */
         .menu-item.active .menu-link {
             background-color: var(--active-bg);
             color: #fff;
@@ -197,6 +197,16 @@
 
             <li class="menu-item">
                 <a class="menu-link">
+                    <i class="fa-solid fa-box-open"></i>
+                    <div>
+                        <strong class="title-text">產品管理系統</strong>
+                        <span class="sub-text">Product Management System</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-link">
                     <i class="fa-solid fa-truck-ramp-box"></i>
                     <div>
                         <strong class="title-text">訂單管理系統</strong>
@@ -243,7 +253,7 @@
         <p>目前正在檢視 AI Command Center 大腦系統 的即時數據。</p>
     </div>
 
-    <script {__rule__="STRICT_COMPLETION"}>
+    <script>
         const menuItems = document.querySelectorAll('.menu-item');
         const contentTitle = document.querySelector('#mainContent h1');
         const contentDesc = document.querySelector('#mainContent p');
