@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業核心營運系統導覽</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #1e293b;
+            --bg-light: #f8fafc;
+            --sidebar-width: 280px;
+            --primary: #3b82f6;
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
+            --hover-bg: #334155;
+            --active-bg: #2563eb; /* 所有項目點亮時統一的藍色背景 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: var(--bg-light);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 側邊欄樣式 */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-header {
+            padding: 24px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #334155;
+            text-align: center;
+            color: #fff;
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 12px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .menu-item {
+            margin-bottom: 8px;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            padding: 14px 16px;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .menu-link i {
+            margin-right: 12px;
+            font-size: 1.1rem;
+            width: 24px;
+            text-align: center;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        /* 滑過效果 */
+        .menu-link:hover {
+            background-color: var(--hover-bg);
+            color: #fff;
+        }
+        
+        .menu-link:hover i {
+            color: var(--primary);
+        }
+
+        /* 💡 點亮 (Active) 狀態 - 所有項目完全統一 */
+        .menu-item.active .menu-link {
+            background-color: var(--active-bg);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .menu-item.active .menu-link i {
+            color: #fff !important;
+        }
+
+        .menu-item.active .sub-text {
+            color: #bfdbfe;
+        }
+
+        /* 英文副標題微調 */
+        .sub-text {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* 主內容顯示區 */
+        .main-content {
+            flex-grow: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #64748b;
+            transition: all 0.3s ease;
+        }
+
+        .main-content h1 {
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fa-solid fa-layer-group"></i> 企業營運架構
+        </div>
+        
+        <ul class="menu-list" id="sidebarMenu">
+            
+            <li class="menu-item active">
+                <a class="menu-link">
+                    <i class="fa-solid fa-brain"></i>
+                    <div>
+                        <strong class="title-text">KPI營運戰情室</strong>
+                        <span class="sub-text">AI Command Center 大腦系統</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-link">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <div>
+                        <strong class="title-text">市場掌握系統</strong>
+                        <span class="sub-text">Market Intelligence System</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-link">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <div>
+                        <strong class="title-text">行銷企劃系統</strong>
+                        <span class="sub-text">Marketing Engine</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-link">
+                    <i class="fa-solid fa-handshake"></i>
+                    <div>
+                        <strong class="title-text">業務收單系統</strong>
+                        <span class="sub-text">Sales Conversion System</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-link">
+                    <i class="fa-solid fa-headset"></i>
+                    <div>
+                        <strong class="title-text">客戶服務系統</strong>
+                        <span class="sub-text">Customer Success System</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-link">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                    <div>
+                        <strong class="title-text">訂單管理系統</strong>
+                        <span class="sub-text">Order & Supply Chain System</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-link">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <div>
+                        <strong class="title-text">人力管理系統</strong>
+                        <span class="sub-text">HR & Training System</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-link">
+                    <i class="fa-solid fa-wallet"></i>
+                    <div>
+                        <strong class="title-text">財務控管系統</strong>
+                        <span class="sub-text">Financial Control System</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-link">
+                    <i class="fa-solid fa-certificate"></i>
+                    <div>
+                        <strong class="title-text">專案授權系統</strong>
+                        <span class="sub-text">Franchise & Licensing System</span>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <h1>KPI營運戰情室</h1>
+        <p>目前正在檢視 AI Command Center 大腦系統 的即時數據。</p>
+    </div>
+
+    <script {__rule__="STRICT_COMPLETION"}>
+        const menuItems = document.querySelectorAll('.menu-item');
+        const contentTitle = document.querySelector('#mainContent h1');
+        const contentDesc = document.querySelector('#mainContent p');
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // 1. 先移除所有項目的 active 亮燈狀態
+                menuItems.forEach(i => i.classList.remove('active'));
+                
+                // 2. 幫當前被點擊的項目加上 active 點亮
+                this.classList.add('active');
+                
+                // 3. 連動更新右側的內容文字
+                const systemName = this.querySelector('.title-text').innerText;
+                const systemSub = this.querySelector('.sub-text').innerText;
+                
+                contentTitle.innerText = systemName;
+                contentDesc.innerText = `目前正在檢視 ${systemSub} 的即時數據。`;
+            });
+        });
+    </script>
+
+</body>
+</html>
