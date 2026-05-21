@@ -258,6 +258,9 @@
         const contentTitle = document.querySelector('#mainContent h1');
         const contentDesc = document.querySelector('#mainContent p');
 
+        // 設定您的目標網址
+        const TARGET_URL = "https://script.google.com/a/macros/shang-tong.com/s/AKfycbzPOgCfc8HrM-z9upqVmwZexcb7gt_NQ893_vZbNd7qZmeQEH8V5OiyOzQmXamwGuDw3w/exec";
+
         menuItems.forEach(item => {
             item.addEventListener('click', function() {
                 // 1. 先移除所有項目的 active 亮燈狀態
@@ -272,6 +275,9 @@
                 
                 contentTitle.innerText = systemName;
                 contentDesc.innerText = `目前正在檢視 ${systemSub} 的即時數據。`;
+
+                // 4. 新增跳轉邏輯：點擊後跳轉至指定頁面
+                window.open(TARGET_URL, '_blank');
             });
         });
     </script>
